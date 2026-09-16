@@ -48,25 +48,33 @@ Usar tom educativo e linguagem acessível, em português.
 
 ## 💬 Interações com a IA
 
-> As respostas abaixo foram geradas a partir do prompt acima. Antes de publicar, recomenda-se rodar o mesmo prompt no Copilot Web e/ou no Lovable e substituir por prints/vídeos reais dessas interações (o desafio pede evidência da sua própria conversa com a ferramenta).
+> Interação real feita no Lovable a partir do prompt acima (projeto "Your Money Chat"), em 3 rodadas de conversa: (1) prompt do PRD → geração do app; (2) pedido do fluxo de telas + tom de voz do agente; (3) pedido do plano de MVP resumido e validação inicial.
 
-### Agente Financeiro (tom de voz)
+### 1ª interação — geração do app a partir do PRD
 
-> "Oi! Sou seu Agente Financeiro. Meu trabalho é entender seus gastos sem te dar trabalho: você me conta o que gastou como conta pra um amigo, e eu organizo tudo. Sem julgamento, sem planilha — só clareza pra você decidir onde quer economizar."
+O Lovable interpretou o PRD e gerou um app funcional chamado **"Cofre"** (caderninho digital), com login por e-mail/Google e uma tela de conversa para registrar gastos:
 
-Tom: acolhedor, direto, sem linguagem que gere culpa financeira.
+![Tela de login do app Cofre, gerado no Lovable](./assets/01-app-cofre-login.png)
 
-### Fluxo de Telas (conceitual)
+### 2ª interação — fluxo de telas e tom de voz do Agente Financeiro
 
-1. **Chat principal** — campo único onde o usuário registra gastos ("gastei 45 no mercado") ou faz perguntas ("quanto gastei com transporte esse mês?").
-2. **Dashboard** — saldo do mês, entradas x saídas, comparação com o mês anterior.
-3. **Metas** — lista de categorias com limite definido pelo usuário e barra de progresso do gasto atual.
-4. **Resumo semanal** — tela/notificação com o texto gerado pelo Agente Financeiro, com 1 a 2 sugestões práticas de economia.
+Pedido: *"Gere o fluxo de telas do app com base nas funcionalidades listadas, e explique em texto curto qual será o tom de voz do Agente Financeiro."*
 
-### Plano de MVP (resumo)
+![Resposta do Lovable com o fluxo de telas em ASCII e a explicação do tom de voz do agente](./assets/02-fluxo-telas-tom-agente.png)
 
-- **Recursos necessários:** processamento de linguagem natural para extrair valor/categoria da mensagem do usuário; base de regras (ou modelo simples) para categorização automática; armazenamento de transações e metas por usuário.
-- **Validação inicial:** protótipo testado com 5 a 10 usuários reais por 2 semanas, medindo se eles continuam registrando gastos sem abandonar (métrica: nº de registros por semana) e se o resumo semanal é lido/considerado útil.
+Resumo do fluxo gerado: **Login/Criar conta → Conversa (tela principal, chat com o Agente Financeiro) → Painel lateral (saldo do mês, gastos por categoria, meta de economia) → ciclo contínuo**, já que cada mensagem registrada atualiza o painel automaticamente.
+
+Tom de voz definido pela IA: *"Parceiro tranquilo, nunca professor"* — frases curtas, português do dia a dia, zero jargão bancário, confirma o que anotou, comenta com leveza e celebra pequenas vitórias, sem nunca julgar ou dar bronca.
+
+### 3ª interação — plano de MVP e validação inicial
+
+Pedido: *"Gere uma versão resumida do plano de MVP: recursos necessários e um esboço de validação inicial (como medir se o app cumpre seu propósito)."*
+
+![Resposta do Lovable com os recursos necessários e a tabela de métricas de validação](./assets/03-plano-mvp-validacao.png)
+
+**Recursos necessários apontados pela IA:** backend com login e banco próprio, modelo de linguagem para interpretar as mensagens (único custo recorrente real), login do Google configurado, domínio próprio e uma pessoa dedicando ~2 a 4h/semana ao teste — nada de equipe.
+
+**Validação inicial sugerida:** testar com 10 pessoas reais por 2 semanas, sem ensinar nada (se precisarem de explicação, já é um resultado), medindo métricas como % que registra o 1º gasto sozinho (meta: 8 de 10), % que volta em 7 dias (meta: 4 de 10) e tempo para anotar um gasto (meta: menos de 20 segundos). Se as metas não forem batidas, a recomendação da IA é cortar funcionalidade em vez de adicionar mais telas.
 
 ---
 
